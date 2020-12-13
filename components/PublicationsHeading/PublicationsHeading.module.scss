@@ -1,0 +1,9 @@
+@use "../../styles/mixin";
+
+.heading {
+  background-image: url("/images/glasses.jpg");
+  @include mixin.page-heading-bg;
+}
+.headingTitle {
+  @include mixin.page-heading-title;
+}

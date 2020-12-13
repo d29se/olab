@@ -1,0 +1,73 @@
+@use "../../styles/color";
+@use "../../styles/mixin";
+@use "../../styles//breakpoints" as bp;
+
+.burgerIcon {
+  display: block;
+  font-size: 2.5rem;
+  &:hover {
+    @include mixin.default-hover;
+  }
+  @include bp.medium-screen {
+    display: none;
+  }
+}
+
+.burgerPane {
+  color: color.$light-color;
+  background-image: linear-gradient(
+    to right,
+    rgba(color.$primary-color, 0.9),
+    rgba(color.$primary-color, 1)
+  );
+  top: 0;
+  left: 0;
+  width: 70%;
+  height: 100%;
+  position: fixed;
+  z-index: 99;
+  padding: 10px;
+  font-size: 2rem;
+
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: flex-end;
+
+  transition: all 0.2s ease;
+  overflow: auto;
+
+  box-shadow: 2px 1px 10px grey;
+  a:hover {
+    @include mixin.default-hover;
+  }
+}
+
+.menuItem {
+  padding: 1rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  svg {
+    width: 36px;
+    height: 36px;
+    fill: color.$secondary-color;
+    margin: 0 0.5rem;
+  }
+}
+
+.hidden {
+  position: absolute;
+  left: -999px;
+}
+
+.fakeFloor {
+  position: fixed;
+  z-index: 98;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(color.$light-color, 0.8);
+  opacity: 0.4;
+}

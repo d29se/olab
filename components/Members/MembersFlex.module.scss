@@ -1,0 +1,11 @@
+@use "../../styles/breakpoints" as bp;
+
+.container {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  @include bp.small-screen {
+    flex-flow: row;
+  }
+}

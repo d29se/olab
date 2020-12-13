@@ -1,0 +1,32 @@
+@use "./color";
+@use "./typography";
+@use "./breakpoints" as bp;
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  // width: auto !important;
+  overflow-x: hidden !important;
+  background-color: rgba(lightgrey, 0.6);
+  @include typography.default-font;
+  width: 100%;
+  @include bp.large-screen {
+    width: 1200px;
+  }
+}
+
+html {
+  margin: auto;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}

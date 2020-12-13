@@ -1,0 +1,30 @@
+@use "../../styles/color";
+
+.container {
+  margin: 4px;
+  display: flex;
+  flex-flow: column;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 160px;
+  height: 160px;
+  border: 1px solid rgba(color.$light-color, 0.6);
+  box-shadow: 0px 0px 2px color.$light-color;
+  border-radius: 0.4rem;
+
+  p {
+    font-size: 1.2rem;
+    color: color.$light-color;
+  }
+
+  i {
+    width: 80px;
+    height: 80px;
+    fill: color.$secondary-color;
+  }
+
+  &:hover {
+    border: 1px solid color.$secondary-color;
+    box-shadow: 0px 0px 8px color.$secondary-color;
+  }
+}

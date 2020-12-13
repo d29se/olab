@@ -1,0 +1,62 @@
+@use "../../styles/color";
+@use "../../styles/mixin";
+@use "../../styles/breakpoints" as bp;
+
+.container {
+}
+
+.heading {
+  @include mixin.page-heading-bg;
+  background-image: url("/images/mass-spec.png");
+}
+.headingTitle {
+  @include mixin.page-heading-title;
+}
+
+.address {
+  padding: 6rem 0 4rem 0;
+  font-size: 1.4rem;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  :last-child {
+    color: color.$secondary-color;
+  }
+
+  @include bp.medium-screen {
+    padding: 8rem 0;
+  }
+}
+
+.maps {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  img {
+    margin: 1rem;
+    width: 60px;
+    height: 60px;
+  }
+}
+
+.embeddedMap {
+  display: none;
+  width: 600px;
+  height: 450px;
+  border: 0;
+  @include bp.small-screen {
+    display: block;
+  }
+}
+
+.addressFlex {
+  display: flex;
+  flex-flow: column;
+  justify-content: space-evenly;
+  align-items: center;
+  @include bp.medium-screen {
+    padding: 6rem 0;
+    flex-flow: row;
+  }
+}

@@ -1,0 +1,70 @@
+@use "../styles/color";
+@use "../styles/mixin";
+@use "../styles/breakpoints" as bp;
+
+.container {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.heading {
+  @include mixin.page-heading-bg;
+  background-image: url("/images/skaggs-building.jpg");
+}
+.headingTitle {
+  @include mixin.page-heading-title;
+  white-space: normal;
+  font-size: 1.5rem;
+}
+
+.overview {
+  margin: 4rem 0;
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 0 16px;
+  font-size: 1.1rem;
+  text-indent: 1rem;
+  text-align: justify;
+  p {
+    display: inline-block;
+    width: 100%;
+    margin: 1rem 0;
+  }
+}
+
+.skaggsnight {
+  width: 100%;
+  height: auto;
+  margin: 1rem 0;
+  border-radius: 0.4rem;
+  box-shadow: 0 0 8px grey;
+  @include bp.small-screen {
+    width: 70%;
+  }
+}
+.skaggsday {
+  width: 100%;
+  height: auto;
+  margin: 1rem 0;
+  border-radius: 0.4rem;
+  box-shadow: 0 0 8px grey;
+  @include bp.small-screen {
+    width: 70%;
+  }
+}
+
+.hands {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  img {
+    width: 16rem;
+    height: auto;
+  }
+}

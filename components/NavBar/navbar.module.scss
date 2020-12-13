@@ -1,0 +1,80 @@
+@use "../../styles/color";
+@use "../../styles/mixin";
+@use "../../styles/breakpoints" as bp;
+
+$DEV: false;
+@mixin devBarColors {
+  @include bp.small-screen {
+    background-color: red;
+    flex-grow: 1;
+  }
+
+  @include bp.medium-screen {
+    background-color: lightgreen;
+    flex-grow: 1;
+  }
+
+  @include bp.large-screen {
+    background-color: lightskyblue;
+    flex-grow: 1;
+  }
+}
+
+.container {
+  padding: 0.8rem 0.6rem;
+  background-color: color.$light-color;
+  box-shadow: 0px 1px 0px color.$secondary-color;
+
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: nowrap;
+
+  position: fixed;
+  top: 0;
+  z-index: 90;
+  width: 100%;
+  height: 80px;
+  @include bp.large-screen {
+    width: 1200px;
+    margin: auto;
+  }
+}
+
+.logo {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  .logoImage {
+    width: 3.5rem;
+    height: auto;
+  }
+  .logoTitle {
+    color: color.$primary-color;
+    font-size: 2rem;
+    font-weight: 300;
+    white-space: nowrap;
+    // Show breakpoints in DEV
+    @if $DEV {
+      @include devBarColors();
+    } @else {
+      flex-grow: 1;
+    }
+  }
+}
+
+.menuItems {
+  @include mixin.no-style-list;
+  display: none; // Hide on mobile
+  font-size: 1.2rem;
+  font-weight: 500;
+  a {
+    padding: 0 8px;
+    &:hover {
+      @include mixin.default-hover;
+    }
+  }
+  @include bp.medium-screen {
+    display: inline-block;
+  }
+}

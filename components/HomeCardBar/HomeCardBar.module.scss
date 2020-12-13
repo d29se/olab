@@ -1,0 +1,21 @@
+@use "../../styles/color";
+@use "../../styles/breakpoints" as bp;
+
+.container {
+  width: 100%;
+  padding: 20px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  @include bp.medium-screen {
+    justify-content: space-evenly;
+  }
+
+  padding: 1rem;
+  background-color: color.$primary-color;
+  color: color.$light-color;
+  box-shadow: 0 0 8px grey;
+  border-top: 5px solid color.$secondary-color;
+  border-bottom: 5px solid color.$secondary-color;
+}

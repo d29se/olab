@@ -1,0 +1,35 @@
+@use "../../styles/color";
+@use "../../styles/mixin";
+@use "../../styles/breakpoints" as bp;
+
+.container {
+  margin: 1.5rem 0;
+  width: 18rem;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+
+  img {
+    filter: grayscale(100%);
+    box-shadow: 0 0px 8px grey;
+  }
+
+  &:hover {
+    cursor: pointer;
+    img {
+      filter: none;
+      @include mixin.default-hover;
+      box-shadow: 0 0px 8px color.$secondary-color;
+      border-radius: 44%;
+    }
+    p {
+      @include mixin.default-hover;
+    }
+  }
+}
+
+.name {
+  color: color.$secondary-color;
+  font-size: 1.2rem;
+}

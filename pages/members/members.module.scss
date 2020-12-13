@@ -1,0 +1,132 @@
+@use "../../styles/color";
+@use "../../styles/mixin";
+@use "../../styles/breakpoints" as bp;
+
+.membersFlex {
+  margin-top: 4rem;
+}
+
+.toggleSwitch {
+  padding: 0.5rem;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  .seccolor {
+    color: color.$light-color;
+  }
+  .greycol {
+    color: rgba(lightgray, 0.7);
+  }
+  background-color: color.$primary-color;
+  color: color.$light-color;
+  box-shadow: 0 0 8px grey;
+  border-top: 5px solid color.$secondary-color;
+  border-bottom: 5px solid color.$secondary-color;
+}
+
+.memberDetail {
+  .profileHeading {
+    padding: 1rem;
+    background-color: color.$primary-color;
+    color: color.$light-color;
+    box-shadow: 0 0 8px grey;
+    border-top: 5px solid color.$secondary-color;
+    border-bottom: 5px solid color.$secondary-color;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @include bp.medium-screen {
+      justify-content: center;
+      font-size: 2rem;
+    }
+  }
+  .headingPhoto {
+    img {
+      width: 10rem;
+      height: 10rem;
+      border: 2px solid color.$secondary-color;
+      @include bp.medium-screen {
+        width: 14rem;
+        height: 14rem;
+      }
+    }
+  }
+  .headingTitle {
+    padding: 0.5em;
+    .position {
+      font-weight: 300;
+    }
+    .fullName {
+      color: color.$secondary-color;
+      font-size: 1.5em;
+      font-weight: 400;
+      line-height: 1;
+    }
+  }
+
+  .memberInfoContainer {
+    display: flex;
+    flex-flow: column;
+
+    .memberInfo {
+      display: flex;
+      flex-flow: column;
+      flex-wrap: nowrap;
+      align-items: flex-start;
+      box-shadow: 0px 0px 12px lightgrey;
+      padding: 1rem;
+
+      svg {
+        width: 60px;
+        height: 60px;
+        fill: color.$secondary-color;
+      }
+      .education {
+        @include mixin.center-flex;
+        p {
+          padding: 1rem;
+        }
+      }
+      .almaMater {
+        @include mixin.center-flex;
+        p {
+          padding: 1rem;
+        }
+      }
+      @include bp.medium-screen {
+        flex-flow: column;
+      }
+      @include bp.medium-screen {
+        justify-content: center;
+        max-width: 400px;
+        min-width: 300px;
+        box-shadow: none;
+      }
+    }
+    @include bp.medium-screen {
+      flex-flow: row;
+      justify-content: space-between;
+    }
+  }
+
+  .bio {
+    display: inline-block;
+    margin: 4rem 1rem;
+    padding: 1rem;
+    text-align: justify;
+
+    p {
+      text-indent: 1rem;
+    }
+
+    p:first-child {
+      color: color.$secondary-color;
+      font-size: 3rem;
+      text-indent: 0;
+    }
+  }
+
+  .tagsPane {
+    margin-top: 2rem;
+  }
+}

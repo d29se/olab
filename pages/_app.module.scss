@@ -1,0 +1,11 @@
+@use "../styles/color";
+
+.container {
+  padding: 0;
+  margin: 0;
+  background-color: color.$light-color;
+
+  main {
+    margin-top: 80px; //Below Navbar space
+  }
+}

@@ -1,0 +1,45 @@
+@use "../../styles/color";
+
+.container {
+  margin: 0.5rem;
+  padding: 0.4rem;
+  border-bottom: 1px solid lightgray;
+  font-size: 0.9rem;
+  p {
+    margin: 8px 0;
+  }
+}
+
+.heading {
+  color: color.$secondary-color;
+}
+
+.journal {
+  color: color.$grey-color;
+  font-size: 0.8rem;
+  font-weight: 300;
+}
+
+.authors {
+  font-weight: 500;
+  .seccolor {
+    color: color.$secondary-color;
+  }
+}
+
+.year {
+  color: color.$primary-color;
+  font-weight: 300;
+}
+
+.pubmed {
+  color: color.$grey-color;
+  text-align: end;
+  font-size: 0.8rem;
+  font-weight: 300;
+}
+
+.pubmedlogo {
+  height: auto;
+  width: 5rem;
+}
