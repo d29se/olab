@@ -20,6 +20,9 @@
 
 .heading {
   color: color.$secondary-color;
+  &:hover {
+    text-decoration: underline;
+  }
 }
 
 .authors {
@@ -31,7 +34,7 @@
 
 .articleids {
   color: color.$grey-color;
-  // text-align: end;
+  text-align: end;
   line-height: 0.6rem;
   font-size: 0.8rem;
   font-weight: 300;

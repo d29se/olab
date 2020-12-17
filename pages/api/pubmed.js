@@ -23,9 +23,13 @@ const getAnthonysPublications = async () => {
 
 export const parsedData = () =>
   getAnthonysPublications().then((data) => {
-    let valuesOnly = [];
-    for (const [key, value] of Object.entries(data)) {
-      key !== "uids" ? valuesOnly.push(value) : null;
+    try {
+      let valuesOnly = [];
+      for (const [key, value] of Object.entries(data)) {
+        key !== "uids" ? valuesOnly.push(value) : null;
+      }
+      return valuesOnly.reverse();
+    } catch {
+      return null;
     }
-    return valuesOnly.reverse();
   });

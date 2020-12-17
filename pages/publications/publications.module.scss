@@ -1,9 +1,25 @@
+@use "../../styles/color";
+
 .container {
 }
 
 .publicationsFlex {
+  margin-top: 4rem;
   display: flex;
   flex-flow: column;
   justify-content: center;
   align-items: center;
+}
+
+.loading {
+  margin-top: 4rem;
+}
+
+.pubmedfailed {
+  margin-top: 4rem;
+  text-align: center;
+  .directLink {
+    color: color.$secondary-color;
+    text-decoration: underline;
+  }
 }
