@@ -1,40 +1,41 @@
 import React, { useState, useEffect } from 'react'
-import { getPubIds } from "../../lib/pubmedApi"
 // Components
 import PublicationsHeading from "../../components/PublicationsHeading/PublicationsHeading"
 import Publication from "../../components/Publication/Publication"
 import FloatingGoTopButton from "../../components/FloatingGoTopButton/FloatingGoTopButton"
-// Lib
-import { getPublications } from "../../lib/pubmedApi"
 // Mocks
 import { mockPublications } from "../../mocks/mockPublications"
-
+// Style
+import style from "./publications.module.scss"
+// API
+import { parsedData } from "../api/pubmed"
 
 
 function Publications() {
-  // There is an issue with getting data directly from pubmed. For now, publications are stored locally.
-  const [pubIds, setpubIds] = useState([])
   const [publications, setpublications] = useState([])
 
-  // useEffect(() => {
-  //   getPubIds("O'Donoghue+Anthony+J").then((data) => {
-  //     setpubIds(data)
-  //   })
-  //   getPublications([28424202, 29725596]).then((data) => {
-  //     setpublications(data)
-  //   })
-  // }, [])
+  useEffect(() => {
+    parsedData().then((ApiResponse) => {
+      setpublications(ApiResponse)
+    })
+  }, [])
 
   return (
-    <div>
+    <div className={style.container}>
       <PublicationsHeading />
       <FloatingGoTopButton />
 
-      {mockPublications.map((publicationData, index) => {
-        return (
-          <Publication pubdata={publicationData} key={index} />
-        )
-      })}
+      <div className={style.publicationsFlex}>
+        {
+          publications.map((item, index) => {
+            return (
+              <Publication pubdata={item} key={index} />
+            )
+
+          })
+        }
+
+      </div>
 
     </div>
   )

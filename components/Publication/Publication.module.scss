@@ -1,12 +1,20 @@
 @use "../../styles/color";
+@use "../../styles/breakpoints" as bp;
 
 .container {
   margin: 0.5rem;
   padding: 0.4rem;
   border-bottom: 1px solid lightgray;
   font-size: 0.9rem;
+
   p {
     margin: 8px 0;
+  }
+  @include bp.small-screen {
+    width: 460px;
+  }
+  @include bp.medium-screen {
+    width: 860px;
   }
 }
 
@@ -14,27 +22,17 @@
   color: color.$secondary-color;
 }
 
-.journal {
-  color: color.$grey-color;
-  font-size: 0.8rem;
-  font-weight: 300;
-}
-
 .authors {
   font-weight: 500;
-  .seccolor {
-    color: color.$secondary-color;
+  .anthony {
+    font-weight: bold;
   }
 }
 
-.year {
-  color: color.$primary-color;
-  font-weight: 300;
-}
-
-.pubmed {
+.articleids {
   color: color.$grey-color;
-  text-align: end;
+  // text-align: end;
+  line-height: 0.6rem;
   font-size: 0.8rem;
   font-weight: 300;
 }

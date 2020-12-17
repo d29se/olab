@@ -16,7 +16,6 @@ function Burger(props: { menuItems: Array<menuItem> }) {
 
   const showBurger = () => {
     setisOpen(!isOpen)
-    console.log('isOpen Burger changed to', isOpen)
   }
 
   const menu: Array<any> = menuItems.map((item, index) => (

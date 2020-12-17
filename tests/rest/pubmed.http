@@ -7,10 +7,10 @@ GET https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&retmax=
 GET https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&retmax=100000&term=O'Donoghue+Anthony+J[Full Author Name]&retmode=json&sort=pub+date 
 
 ### PubMed publication summary by IDs
-GET https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=pubmed&id=31362766,31355632
+GET https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=pubmed&id=31362766,31355632&retmode=json
 
 ### JSON publication detail
-GET https://www.ncbi.nlm.nih.gov/research/pubtator-api/publications/export/biocjson?pmids=25456815
+GET https://www.ncbi.nlm.nih.gov/research/pubtator-api/publications/export/biocjson?pmids=31362766,31355632
 
 ### TEST
 GET https://www.ncbi.nlm.nih.gov/research/pubtator-api/publications/export/biocjson?pmids=28424202,29725596&api_key=7f1b264cb2257e6de15ede6cdd397fbba409
@@ -20,7 +20,7 @@ GET https://www.ncbi.nlm.nih.gov/research/pubtator-api/publications/export/biocj
 7f1b264cb2257e6de15ede6cdd397fbba409
 
 ### 
-POST https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pubmed&id==29725596
+POST https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pubmed&id=31362766
 
 
 
